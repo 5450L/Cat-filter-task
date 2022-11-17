@@ -21,8 +21,14 @@ export class DataService {
   }
 
   fetchPhotos(amountPhotos: number, breedsToShow: string[]) {
-    return this.http.get(
-      `https://api.thecatapi.com/v1/images/search?limit=${amountPhotos}&breed_ids=${breedsToShow}`
-    );
+    if (breedsToShow) {
+      return this.http.get(
+        `https://api.thecatapi.com/v1/images/search?limit=${amountPhotos}&breed_ids=${breedsToShow}`
+      );
+    } else {
+      return this.http.get(
+        `https://api.thecatapi.com/v1/images/search?limit=${amountPhotos}`
+      );
+    }
   }
 }

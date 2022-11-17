@@ -6,13 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'cat-filter-task';
-
-  cats: any = {};
-
-  catsObs: any;
-  limit = 5;
-  breeds: string[] = ['abob', 'bsho', 'orie'];
+ 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {

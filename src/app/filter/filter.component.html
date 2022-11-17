@@ -1,17 +1,17 @@
 <form [formGroup]="filterForm" (ngSubmit)="onShowCats(filterForm)">
   <mat-form-field appearance="fill">
-    <mat-label>Breeds</mat-label>
+    <mat-label>All Breeds</mat-label>
     <mat-select formControlName="breeds" multiple>
-      <mat-option *ngFor="let breed of breedList | async" [value]="breed">{{
+      <mat-option *ngFor="let breed of breedList" [value]="breed">{{
         breed.name
       }}</mat-option>
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Amount</mat-label>
+  <mat-form-field appearance="fill">
+    <mat-label>Photos Amount</mat-label>
     <input
-      formControlName="breeds"
+      formControlName="amountPhotos"
       type="number"
       matInput
       placeholder="Images amount"
@@ -21,6 +21,11 @@
   <button mat-raised-button color="accent" type="submit">Show Cats</button>
 </form>
 
-<div *ngFor="let cat of catPhotos | async">
-  <img [src]="cat.url" [alt]="cat.name" />
-</div>
+<section id="fetched-photos">
+  <mat-card *ngFor="let cat of catPhotos | async">
+    <mat-card-title> </mat-card-title>
+    <mat-card-content>
+      <img mat-card-image [src]="cat.url" [alt]="cat.name" />
+    </mat-card-content>
+  </mat-card>
+</section>
