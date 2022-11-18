@@ -22,7 +22,7 @@
 </form>
 
 <section id="fetched-photos">
-  <mat-card *ngFor="let cat of catPhotos | async">
+  <mat-card *ngFor="let cat of catPhotos">
     <mat-card-title> </mat-card-title>
     <mat-card-content>
       <img mat-card-image [src]="cat.url" [alt]="cat.name" />

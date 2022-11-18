@@ -8,3 +8,9 @@ export class FetchBreeds implements Action {
   constructor(public payload: any) {}
 }
 
+export class FetchPhotos implements Action {
+  readonly type = FETCH_PHOTOS;
+  constructor(public payload: any) {}
+}
+
+export type CatFilterActions = FetchBreeds | FetchPhotos;
