@@ -18,7 +18,7 @@ export function catFilterReducer(
     case CatFilterActions.FETCH_BREEDS:
       return { breeds: action.payload, photos: state.photos };
     case CatFilterActions.FETCH_PHOTOS:
-      return { breeds: state.breeds, photos: action.payload };
+      return { ...state, photos: action.payload };
     default:
       return state;
   }

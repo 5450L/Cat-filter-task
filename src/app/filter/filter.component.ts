@@ -53,7 +53,6 @@ export class FilterComponent implements OnInit, OnDestroy {
       })
     );
 
-    // this.catPhotos = this.dataService.fetchPhotos(amountPhotos, breedsToShow);
   }
 
   ngOnInit(): void {
